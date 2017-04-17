@@ -1,0 +1,124 @@
+{
+  "spreadsheetId": "1JWfwoJ5uSSxYry0AwGg3oc4FPsprIjWWVKWrFn-KqyE",
+  "valueRanges": [
+    {
+      "range": "whereuat!A1:Z1000",
+      "majorDimension": "ROWS",
+      "values": [
+        [
+          "whereuat"
+        ],
+        [
+          "NO"
+        ]
+      ]
+    },
+    {
+      "range": "trips!A1:Z1000",
+      "majorDimension": "ROWS",
+      "values": [
+        [
+          "weekend",
+          "cost"
+        ],
+        [
+          "1",
+          "$3,600,000"
+        ],
+        [
+          "2",
+          "$3,600,000"
+        ],
+        [
+          "3",
+          "$3,600,000"
+        ],
+        [
+          "4",
+          "$3,600,000"
+        ],
+        [
+          "5",
+          "$3,600,000"
+        ],
+        [
+          "6",
+          "$3,600,000"
+        ],
+        [
+          "7",
+          "$3,600,000"
+        ]
+      ]
+    },
+    {
+      "range": "alternatives!A1:Z1000",
+      "majorDimension": "ROWS",
+      "values": [
+        [
+          "name",
+          "desc",
+          "unitCost",
+          "citationLabel",
+          "citation"
+        ],
+        [
+          "Meals on Wheels",
+          "Meals on Wheels recipients",
+          "$2,765",
+          "How we got this number",
+          "Feeding a senior through Meals on Wheels costs $2,765 a year. President Trump wants to slash their funding. "
+        ],
+        [
+          "School Lunch",
+          "children fed per year",
+          "416",
+          "How we got this number",
+          "The National School Lunch Program provides food assistance to children in schools for only $416 per child per year. "
+        ],
+        [
+          "Medicaid",
+          "Medicaid recipients",
+          "$5,790",
+          "How we got this number",
+          "Helping low-income people access health care through Medicaid costs $5,790 per recipient a year. President Trump continues to threaten Medicaid funding. "
+        ],
+        [
+          "Homelessness aid",
+          "years funded",
+          "$4,000,000",
+          "How we got this number",
+          "Trump wants to cut the U.S. Interagency Council on Homelessness which combats homelessness, particularly for veterans, and only costs $4 million a year to run."
+        ],
+        [
+          "Nutrition assistance",
+          "meals funded",
+          "1.39",
+          "How we got this number",
+          "The Supplemental Nutrition Assistance Program (SNAP) helps millions of families put food on the table and only costs $1.39 a meal. "
+        ],
+        [
+          "Public school funding",
+          "students educated per year",
+          "12,296",
+          "How we got this number",
+          "It costs a public school around $12,296 a year to educate students. "
+        ],
+        [
+          "Pell Grants",
+          "Pell Grants per year",
+          "3690",
+          "How we got this number",
+          "Pell Grants help low-income students pay for college and have been on Trump's chopping block."
+        ],
+        [
+          "National Park Service",
+          "Trump salary donations",
+          "$78,333",
+          "How we got this number",
+          "President Trump donated his first quarter's salary to the National Park Service, which is a drop in the bucket compared to the taxpayer money spent on Mar-a-Lago trips. "
+        ]
+      ]
+    }
+  ]
+}

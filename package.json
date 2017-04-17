@@ -1,0 +1,11 @@
+{
+  "name": "trumpalago",
+  "version": "1.0.0",
+  "description": "Alexa flash briefing lambda to report if Trump is in Mar-a-Lago",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "trumpalago@opendog.org",
+  "license": "ISC"
+}
