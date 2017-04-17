@@ -1,17 +1,17 @@
 var https = require('https')
 
-var response = {
-    uid: 'urn:uuid:6efe5726-f11c-4c61-aaaa-d4aa9886a987',
-    updateDate:  (new Date()).toISOString(),
-    titleText: 'Is Trump At Mar-a-Lago?',
-    redirectionUrl: 'https://istrumpatmaralago.org/',
-    mainText: ''
-}
-
 var url = 'https://sheets.googleapis.com/v4/spreadsheets/1JWfwoJ5uSSxYry0AwGg3oc4FPsprIjWWVKWrFn-KqyE/values:batchGet?' +
     'ranges=whereuat&ranges=trips&ranges=alternatives&key=AIzaSyB-Gb6hsgnEaZhE6wGoNIBM2BOumgHqFDQ'
 
 var getAlexaResponse = (callback) => {
+    var response = {
+        uid: 'urn:uuid:6efe5726-f11c-4c61-aaaa-d4aa9886a987',
+        updateDate: '',
+        titleText: 'Is Trump At Mar-a-Lago?',
+        redirectionUrl: 'https://istrumpatmaralago.org/',
+        mainText: ''
+    }
+
     var req = https.get(url, (res) => {
         var chunks = []
 
@@ -23,10 +23,16 @@ var getAlexaResponse = (callback) => {
             var body = chunks.join('')
             var data = JSON.parse(body)
 
-            response.mainText = createMainText(data)
+            if (data.valueRanges) {
+                response.mainText = createMainText(data)
+            } else {
+                response.mainText = createStaticText()
+            }
+
+            response.updateDate = (new Date()).toISOString()
 
             //console.log(price)
-            callback(null, response)
+            callback(null, {statusCode: 200, body: JSON.stringify(response, null, 2)})
         })
     })
 
@@ -34,7 +40,9 @@ var getAlexaResponse = (callback) => {
         console.error(e);
 
         response.mainText = createStaticText()
-        callback(null, defaultStatus);
+        response.updateDate = (new Date()).toISOString()
+
+        callback(null, {statusCode: 200, body: JSON.stringify(response, null, 2)})
     })
 }
 
@@ -76,7 +84,7 @@ function createStaticText() {
     var noOfWeekends = figureOutWeekends()
 
     var altUnitCost = 2765
-    var altNo = totalCost * 1000000 / altUnitCost
+    var altNo = Math.floor(totalCost * 1000000 / altUnitCost)
     var altName = "meals on wheels";
     var altDesc = "meals on wheels recipients"
 
@@ -115,4 +123,4 @@ function test(m, o) {
     console.log(JSON.stringify(o, null, 2))
 }
 
-getAlexaResponse(test);
+// getAlexaResponse(test);
